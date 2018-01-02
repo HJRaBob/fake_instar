@@ -14,8 +14,8 @@
             <th><%= post.id %></th>
             <th><%= post.title %></th>
             <th><%= post.created_at.to_s[5,6] %></th>
-            <th><a href="/post/:id">보기</a></th>
-            <th><a href="/post/:id" data-method='delete'>삭제</a></th>
+            <th><a href="/posts/<%=post.id%>">보기</a></th>
+            <th><a href="/posts/<%=post.id%>" data-method='delete'>삭제</a></th>
         </tr>
     <% end %>
 </table>
