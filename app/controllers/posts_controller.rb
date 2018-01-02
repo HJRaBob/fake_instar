@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+    before_action :set_post, only: [:show, :edit, :update, :destroy]
+    
     def index
         @posts = Post.all
     end
@@ -7,26 +9,39 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.create(:title => params[:title],:content => params[:content])
+        post = Post.create(
+            :title => params[:title],
+            :content => params[:content]
+        )
         redirect_to "/posts/#{post.id}"
     end
 
-    def read
-        @post = Post.find(params[:id])
+    def show
+        #@post = Post.find(params[:id])
     end
 
     def edit
-        @post = Post.find(params[:id])
+        #@post = Post.find(params[:id])
     end
 
     def update
-        post = Post.find(params[:id])
-        post.update(:title => params[:title],:content => params[:content])
-        redirect_to "/posts/#{post.id}"
+        #post = Post.find(params[:id])
+        @post.update(
+            :title => params[:title],
+            :content => params[:content]
+        )
+        redirect_to "/posts/#{@post.id}"
     end
 
-    def delete
-        Post.find(params[:id]).delete
+    def destroy
+        #Post.find(params[:id]).delete
+        @post.delete
         redirect_to "/"
+    end
+
+    private
+
+    def set_post
+        @post = Post.find(params[:id])
     end
 end
