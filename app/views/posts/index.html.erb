@@ -1,0 +1,21 @@
+<h1>해장라밥의 개시판</h1>
+<a href="/posts/new">글쓰기</a>
+<hr>
+<table>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>시간</th>
+        <th>보기</th>
+        <th>삭제</th>
+    </tr>
+    <% @posts.each do |post| %>
+        <tr>
+            <th><%= post.id %></th>
+            <th><%= post.title %></th>
+            <th><%= post.created_at %></th>
+            <th><a href="/post/:id">보기</a></th>
+            <th><a href="/post/:id" data-method='delete'>삭제</a></th>
+        </tr>
+    <% end %>
+</table>
