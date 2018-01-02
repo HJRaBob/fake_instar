@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
     def create
         Post.create(:title => params[:title],:content => params[:content])
+        redirect_to '/'
     end
 
     def read
