@@ -110,3 +110,31 @@ $ rails g scaffold blog title:string content:text
         validates :content, presence: true
     end
     ```
+
+## Image 업로더 <a name="Img-up"></a>
+
+1. gem `carrierwave` 설치         https://github.com/carrierwaveuploader/carrierwave
+
+1. DB와 controller에 img 저장 추가
+
+1. `new.html.erb`
+
+    ```erb
+    <%= form_tag "/posts", method: "post", multipart: true do %>
+        <%= text_field_tag("post[title]") %> <br>
+        <%= text_area_tag("post[content]") %> <br>
+        <%= file_field_tag("post[postimage]") %> <br>
+        <%= submit_tag %>
+    <% end %>
+    ```
+1. `show.html.erb`
+
+    ```erb
+        <h1><%= @post.title %></h1>
+        <br><br>
+        <p><%= @post.content %></p>
+        <img src="<%=@post.postimage%>">
+        <hr>
+        <a href="/">홈으로</a>
+        <a href="/posts/<%=@post.id%>/edit">수정</a>
+    ```

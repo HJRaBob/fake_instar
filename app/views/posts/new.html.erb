@@ -7,8 +7,9 @@
     <%# <input type="submit" value="저장">
 </form> %>
 
-<%= form_tag "/posts", method: "post" do %>
-    <%= text_field_tag("post[title]") %>
-    <%= text_area_tag("post[content]") %>
+<%= form_tag "/posts", method: "post", multipart: true do %>
+    <%= text_field_tag("post[title]") %> <br>
+    <%= text_area_tag("post[content]") %> <br>
+    <%= file_field_tag("post[postimage]") %> <br>
     <%= submit_tag %>
 <% end %>
