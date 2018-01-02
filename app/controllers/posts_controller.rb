@@ -7,8 +7,8 @@ class PostsController < ApplicationController
     end
 
     def create
-        Post.create(:title => params[:title],:content => params[:content])
-        redirect_to '/'
+        post = Post.create(:title => params[:title],:content => params[:content])
+        redirect_to "/posts/#{post.id}"
     end
 
     def read
@@ -20,10 +20,13 @@ class PostsController < ApplicationController
     end
 
     def update
-        Post.find(params[:id]).update(:title => params[:title],:content => params[:content])
+        post = Post.find(params[:id])
+        post.update(:title => params[:title],:content => params[:content])
+        redirect_to "/posts/#{post.id}"
     end
 
     def delete
         Post.find(params[:id]).delete
+        redirect_to "/"
     end
 end
