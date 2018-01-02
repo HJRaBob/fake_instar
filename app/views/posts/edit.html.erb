@@ -1,9 +1,15 @@
-<form action="/posts/<%=@post.id%>" method = "POST">
+<!--<form action="/posts/<%=@post.id%>" method = "POST">
     제목 : <input type="text" name="title" value=<%= @post.title %> > <br>
     내용 : <br>
     <textarea name="content" cols="50" rows="15"><%= @post.content %></textarea>
     <br>
     <input type="hidden" name="_method" value="put" />
-    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-    <input type="submit" value="저장">
-</form>
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">-->
+    <%# <input type="submit" value="저장">
+</form> %>
+
+<%= form_tag "/posts", method: "post" do %>
+    <%= text_field_tag("post[title]",@post.title) %>
+    <%= text_area_tag("post[content]",@post.content) %>
+    <%= submit_tag %>
+<% end %>

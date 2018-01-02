@@ -8,7 +8,7 @@
 </form> %>
 
 <%= form_tag "/posts", method: "post" do %>
-    <%= text_field_tag("title") %>
-    <%= text_area_tag("content") %>
+    <%= text_field_tag("post[title]") %>
+    <%= text_area_tag("post[content]") %>
     <%= submit_tag %>
 <% end %>
