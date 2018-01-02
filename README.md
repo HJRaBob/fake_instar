@@ -3,6 +3,7 @@
 1. [REST-Full 하게 구성하기](#Rest-full)
 1. [DB 접근 제한](#DB)
 1. [CRUD 한줄로 생성](#a-line)
+1. [Image 업로더](#Img-up)
 
 ## REST-Full 하게 구성하기 <a name="Rest-full"></a>
 
