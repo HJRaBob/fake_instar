@@ -1,6 +1,6 @@
 # 가짜 인스타그램 만들어 보기
 
-1. [REST-Full 하게 구성하기](#REST-full)
+1. [REST-Full 하게 구성하기](#Rest-full)
 1. [DB 접근 제한](#DB)
 
 ## REST-Full 하게 구성하기 <a name="Rest-full"></a>
