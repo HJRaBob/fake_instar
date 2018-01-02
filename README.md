@@ -32,7 +32,9 @@
 </form>
 ```
 
+
 혹은
+
 
 ```erb
 <%= form_tag"/posts", method: "post" do %>
@@ -51,7 +53,9 @@
 </form>
 ```
 
+
 혹은
+
 
 ```erb
 <%= form_tag"/posts", method: "put" do %>
