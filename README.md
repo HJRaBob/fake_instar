@@ -32,7 +32,7 @@
 </form>
 ```
 
-    혹은
+혹은
 
 ```erb
 <%= form_tag"/posts", method: "post" do %>
@@ -51,7 +51,7 @@
 </form>
 ```
 
-    혹은
+혹은
 
 ```erb
 <%= form_tag"/posts", method: "put" do %>
@@ -61,7 +61,7 @@
 <% end %>
 ```
 
-### DB 접근 제한
+## DB 접근 제한
 
 `posts_controller.rb`
 
