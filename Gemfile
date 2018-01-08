@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'figaro'
+gem 'simple_form'
 
 gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'mini_magick'
