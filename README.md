@@ -3,7 +3,7 @@
 1. [REST-Full 하게 구성하기](#Rest-full)
 1. [DB 접근 제한](#DB)
 1. [CRUD 한줄로 생성](#a-line)
-1. [Image 업로더](#Img-up)
+1. [Image](#Img-up)
 
 ## REST-Full 하게 구성하기 <a name="Rest-full"></a>
 
@@ -112,7 +112,9 @@ $ rails g scaffold blog title:string content:text
     end
     ```
 
-## Image 업로더 <a name="Img-up"></a>
+## Image <a name="Img-up"></a>
+
+### Image 업로더
 
 1. gem `carrierwave` 설치         https://github.com/carrierwaveuploader/carrierwave
 
@@ -138,4 +140,29 @@ $ rails g scaffold blog title:string content:text
         <hr>
         <a href="/">홈으로</a>
         <a href="/posts/<%=@post.id%>/edit">수정</a>
+    ```
+
+### Image 썸네일 저장
+
+1. `imagemagick` 설치
+
+    ```
+    $ sudo apt-get install imagemagick
+    ```
+
+1. `mini_magick` gem 설치
+
+    ```
+    gem 'mini_magick'
+    ```
+
+1. `post_image_uploader.rb` 주석 해제
+
+    ```ruby
+    include CarrierWave::MiniMagick
+
+    #숫자로 사이즈 조정
+    version :thumb do
+        process resize_to_fit: [300, 300]
+    end
     ```

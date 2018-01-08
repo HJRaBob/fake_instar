@@ -12,4 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require_bootstrap
+ *= require_popper
  */
+
+ @import "bootstrap";

@@ -8,6 +8,7 @@
     <%# <input type="submit" value="저장">
 </form> %>
 
+<%# multipart: true 파일을 받기 위함 %>
 <%= form_tag "/posts", method: "post" do, multipart: true %>
     <%= text_field_tag("post[title]",@post.title) %> <br>
     <%= text_area_tag("post[content]",@post.content) %> <br>

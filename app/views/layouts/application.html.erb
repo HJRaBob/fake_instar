@@ -8,6 +8,21 @@
 </head>
 <body>
 
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if user_signed_in? %>
+<li>
+  <%= current_user.email %>님
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+</li>
+<% else %>
+<li>
+  <%= link_to('Login', new_user_session_path) %>
+  <%= link_to('회원가입', new_user_registration_path)%>
+</li>
+<% end %>
+
 <%= yield %>
 
 </body>

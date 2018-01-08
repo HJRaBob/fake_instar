@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @posts = Post.where("title LIKE ?", "%#{params["q"]}%")
   end
 
   # GET /blogs/1
